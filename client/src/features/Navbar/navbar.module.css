@@ -1,0 +1,18 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 50px;
+    background-color: darkslategray;
+    padding: 5px;
+}
+.navbar a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-family: cursive;
+    width: 30px;
+    background-color: darkcyan;
+    border-radius: 5px;
+    margin: 5px;
+}

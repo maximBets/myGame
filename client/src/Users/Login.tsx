@@ -3,7 +3,7 @@ import React from 'react';
 function gamePage():JSX.Element {
   return (
     <div>
-      123
+      1232ewewezxcxcxcxcxcxcx
     </div>
   );
 }
