@@ -5,8 +5,8 @@ function CardList():JSX.Element {
 
   return (
     <div>
-      {themes.map(theme => (<div className="">тема</div>)
-      flashes.map(flash => <Card />))}
+      {/* {themes.map(theme => (<div className="">тема</div>)
+      flashes.map(flash => <Card />))} */}
       
     </div>
   );
