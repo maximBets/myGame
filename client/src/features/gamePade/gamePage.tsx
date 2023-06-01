@@ -1,7 +1,6 @@
 import React from 'react';
-import './App.css';
 
-function App(): JSX.Element {
+function gamePage():JSX.Element {
   return (
     <div>
       123
@@ -9,4 +8,4 @@ function App(): JSX.Element {
   );
 }
 
-export default App;
+export default gamePage;
