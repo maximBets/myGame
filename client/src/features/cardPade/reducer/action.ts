@@ -1,0 +1,1 @@
+export type Action = {type: 'card/init', payload: Card}
