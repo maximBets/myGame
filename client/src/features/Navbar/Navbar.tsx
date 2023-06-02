@@ -13,11 +13,11 @@ function Navbar(): JSX.Element {
         {user?.name ? (
           <>
             <Link to="/">
-              <div className="brand-logo center">Игра</div>
+              <div className="brand-logo">Игра</div>
             </Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
-                Привет, {user.name}! у тебя {user.totalScore}{' '}
+                Привет, {user.name}! у тебя {user.totalScore}
               </li>
             </ul>
           </>

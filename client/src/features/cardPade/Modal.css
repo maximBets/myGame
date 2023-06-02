@@ -32,5 +32,18 @@
  transform:  scale(1);
 }
 .hide-on-med-and-down{
+  justify-content: center ;
   margin-right: 30px;
+}
+.sssss{
+  margin-right: 5px;
+}
+.reggga{
+  width: 50%;
+  height: 50%;
+}
+.regaaa{
+  height: 100%;
+  background-color: blue;
+
 }
