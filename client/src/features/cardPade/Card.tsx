@@ -14,6 +14,7 @@ function Card({ flash }: { flash: Flash }): JSX.Element {
   const [valueModal, setValueModal] = useState('');
   const dispatch = useDispatch();
   const { user } = useSelector((store: RootState) => store.userReducer);
+  const [details, setDatails] = useState(false);
 
   // const s = useSelector((state:RootState) => state.flashCardReducer)
 
@@ -45,30 +46,41 @@ function Card({ flash }: { flash: Flash }): JSX.Element {
         className={
           activeCard ? styles.containerCard : styles.containerCardDisable
         }
-        onClick={() => setActiveModal(!activeModal)}>
+        onClick={() => setActiveModal(!activeModal)}
+      >
         <div className={styles.scoreCard}>{flash.score} </div>
       </div>
       <div>
         <div className={activeModal ? 'modals active' : 'modals'}>
           <div
-            className={
-              activeModal ? 'modals-content active' : 'modals-content'
-            }>
+            className={activeModal ? 'modals-content active' : 'modals-content'}
+          >
             <div className="">{flash.question}</div>
-            <input onChange={(e) => setValueModal(e.target.value)} />
+            <input onChange={(e) => setValueModal(e.target.value)} required />
             <div className="">{activeCheck}</div>
 
-            <button
-              type="button"
-              onClick={() => {
-                setActiveModal(!activeModal);
-                setActiveCard((prev) => !prev);
-              }}>
-              Закрыть
-            </button>
-            <button type="button" onClick={hendlerCheck}>
-              Проверить
-            </button>
+            <div onClick={() => setDatails((prev) => !prev)}>
+              {details ? (
+                <button
+                  className="waves-effect waves-light btn"
+                  type="button"
+                  onClick={() => {
+                    setActiveModal(!activeModal);
+                    setActiveCard((prev) => !prev);
+                  }}
+                >
+                  Закрыть
+                </button>
+              ) : (
+                <button
+                  className="waves-effect waves-light btn"
+                  type="button"
+                  onClick={hendlerCheck}
+                >
+                  Проверить
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
