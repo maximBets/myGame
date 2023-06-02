@@ -15,7 +15,7 @@ function Login(): JSX.Element {
   };
 
   return (
-    <div>
+    <div className='container'>
       <form onSubmit={handlerLogin}>
         <input
           name="name"

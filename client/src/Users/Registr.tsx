@@ -24,9 +24,10 @@ function Registr(): JSX.Element {
   };
 
   return (
-    <div>
+    <div className='container'>
       <form onSubmit={registration}>
         <input
+          className="form-control"
           name="name"
           placeholder="Имя"
           type="text"

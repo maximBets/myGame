@@ -33,9 +33,7 @@
 .modals-content.active {
  transform:  scale(1);
 }
-.vopros{
-  color: rgb(0, 0, 0);
-  justify-content: center;
+
   }
   .cont{
   width: 5%;
@@ -47,5 +45,7 @@
   
   
   body{
+
   background-color: rgb(192, 226, 248);
   }
+
