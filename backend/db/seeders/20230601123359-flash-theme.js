@@ -120,7 +120,7 @@ module.exports = {
           ],
         },
         {
-          theme: 'Угадай блюдо по ингредиентам',
+          theme: 'Угадай блюдо',
           Flashes: [
             {
               question:
