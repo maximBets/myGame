@@ -42,7 +42,9 @@ authRoutes.post('/register', async (req, res) => {
 
     req.session.userId = user.id;
 
-    res.status(200).json({ success: true });
+    res
+      .status(200)
+      .json({ name: user.name, id: user.id, password: user.password });
   } catch (error) {
     console.error(error);
 
@@ -83,7 +85,9 @@ authRoutes.post('/login', async (req, res) => {
     // * req.session - хранилище сессии, которое уникально для каждого браузера
 
     req.session.userId = user.id;
-    res.status(200).json({ success: true });
+    res
+      .status(200)
+      .json({ name: user.name, id: user.id, password: user.password });
   } catch (error) {
     console.error(error);
 
