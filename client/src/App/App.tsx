@@ -12,11 +12,10 @@ function App(): JSX.Element {
     api
       .initFetch()
       .then((data) => despatch({ type: 'flashcards/init', payload: data }));
-  }, [despatch]);
+  }, []);
 
   return (
     <div>
-      <Card />
       <CardList />
     </div>
   );

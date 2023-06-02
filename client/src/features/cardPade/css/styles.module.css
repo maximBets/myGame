@@ -1,5 +1,32 @@
-.containerCard{
+.containerCard {
   background-color: #82b1ff;
   width: 100px;
   height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flashcardContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.flashContainer {
+  display: flex;
+}
+
+.flashcardblock {
+  display: flex;
+}
+
+.themeCard {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerCardDisable{
+  pointer-events: none;
 }
