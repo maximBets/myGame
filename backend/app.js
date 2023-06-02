@@ -5,7 +5,7 @@ const express = require('express');
 const serverConfig = require('./config/serverConfig');
 
 const themeApiRouter = require('./api/theme.routes');
-const authRouter = require('./api/theme.routes');
+const authRouter = require('./api/auth.routes');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
