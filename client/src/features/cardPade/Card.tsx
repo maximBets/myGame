@@ -1,25 +1,56 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import styles from './css/styles.module.css';
 import { Flash } from './reducer/types/type';
 import './Modal.css';
+import { RootState } from '../../store';
 
 function Card({ flash }: { flash: Flash }): JSX.Element {
-  const [active, setActive] = useState(false);
+  const [activeModal, setActiveModal] = useState(false);
+  const [activeCard, setActiveCard] = useState(true);
+  const [activeCheck, setActiveCheck] = useState('');
+  const [valueModal, setValueModal] = useState('');
 
-  console.log(active);
+  // const s = useSelector((state:RootState) => state.flashCardReducer)
+
+  const hendlerCheck: React.MouseEventHandler<HTMLButtonElement> = () => {
+    if (flash.answer.toLowerCase() === valueModal.toLowerCase()) {
+      setActiveCheck('верно');
+    } else {
+      setActiveCheck('не верно');
+    }
+  };
 
   return (
     <>
-      <div className={styles.containerCard} onClick={() => setActive(!active)}>
+      <div
+        className={
+          activeCard ? styles.containerCard : styles.containerCardDisable
+        }
+        onClick={() => setActiveModal(!activeModal)}
+      >
         <div className={styles.scoreCard}>{flash.score} </div>
       </div>
       <div>
-        <div className={active ? 'modals active' : 'modals'}>
-          <div className={active ? 'modals-content active' : 'modals'}>
+        <div className={activeModal ? 'modals active' : 'modals'}>
+          <div
+            className={activeModal ? 'modals-content active' : 'modals-content'}
+          >
             <div className="">{flash.question}</div>
-            <input></input>
-            <button type="button" onClick={() => setActive(!active)}>
+            <input onChange={(e) => setValueModal(e.target.value)} />
+            <div className="">{activeCheck}</div>
+
+            <button
+              type="button"
+              onClick={() => {
+                setActiveModal(!activeModal);
+                setActiveCard((prev) => !prev);
+              }}
+            >
               Закрыть
+            </button>
+            <button type="button" onClick={hendlerCheck}>
+              Проверить
             </button>
           </div>
         </div>
