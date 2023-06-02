@@ -1,0 +1,33 @@
+.modals {
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.281);
+  position: fixed;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.modals.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modals-content {
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  transform: scale(0.5);
+  transition: 0,4s all;
+}
+
+.modals-content.active {
+ transform:  scale(1);
+}
