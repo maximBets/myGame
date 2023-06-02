@@ -10,6 +10,7 @@ function CardList(): JSX.Element {
   );
 
   return (
+    <div className={styles.gameContainer}>
     <div className={styles.flashcardContainer}>
       {flashCards.map((theme) => (
         <div className={styles.flashcardblock} key={theme.id}>
@@ -21,6 +22,7 @@ function CardList(): JSX.Element {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 }

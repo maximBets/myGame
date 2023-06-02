@@ -1,15 +1,25 @@
 .containerCard {
   background-color: #82b1ff;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
+  background: radial-gradient( #4076d5, #346db7);
+  transition: transform 0.1s ease;
+}
+
+.containerCard:active {
+  transform: scale(0.95);
 }
 
 .flashcardContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .flashContainer {
@@ -21,12 +31,37 @@
 }
 
 .themeCard {
-  width: 120px;
+  width: 180px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
+  background: radial-gradient( #4076d5, #346db7);
+  color: rgb(255, 255, 255);
+  font-size: 23px;
 }
 
-.containerCardDisable{
+.containerCardDisable {
   pointer-events: none;
+  background-color: #82b1ff;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.gameContainer {
+  width: 100vw;
+  height: 91vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scoreCard {
+  color: rgb(255, 229, 136);
+  font-size: 33px;
 }
