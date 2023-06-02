@@ -29,7 +29,7 @@ function Card({ flash }: { flash: Flash }): JSX.Element {
         dispatch({ type: 'user/score/update', payload: count });
       }
     } else {
-      setActiveCheck(`не верно, верный ответ ${flash.answer}`);
+      setActiveCheck(`Не верно, верный ответ: ${flash.answer}`);
       if (user) {
         const count =
           typeof user.totalScore === 'number'
