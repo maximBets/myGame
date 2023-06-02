@@ -29,7 +29,7 @@ function Card({ flash }: { flash: Flash }): JSX.Element {
         dispatch({ type: 'user/score/update', payload: count });
       }
     } else {
-      setActiveCheck('не верно');
+      setActiveCheck(`не верно, верный ответ ${flash.answer}`);
       if (user) {
         const count =
           typeof user.totalScore === 'number'
@@ -46,15 +46,15 @@ function Card({ flash }: { flash: Flash }): JSX.Element {
         className={
           activeCard ? styles.containerCard : styles.containerCardDisable
         }
-        onClick={() => setActiveModal(!activeModal)}
-      >
+        onClick={() => setActiveModal(!activeModal)}>
         <div className={styles.scoreCard}>{flash.score} </div>
       </div>
       <div>
         <div className={activeModal ? 'modals active' : 'modals'}>
           <div
-            className={activeModal ? 'modals-content active' : 'modals-content'}
-          >
+            className={
+              activeModal ? 'modals-content active' : 'modals-content'
+            }>
             <div className="">{flash.question}</div>
             <input onChange={(e) => setValueModal(e.target.value)} required />
             <div className="">{activeCheck}</div>
@@ -66,16 +66,14 @@ function Card({ flash }: { flash: Flash }): JSX.Element {
                   onClick={() => {
                     setActiveModal(!activeModal);
                     setActiveCard((prev) => !prev);
-                  }}
-                >
+                  }}>
                   Закрыть
                 </button>
               ) : (
                 <button
                   className="waves-effect waves-light btn"
                   type="button"
-                  onClick={hendlerCheck}
-                >
+                  onClick={hendlerCheck}>
                   Проверить
                 </button>
               )}
