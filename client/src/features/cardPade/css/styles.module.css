@@ -6,9 +6,13 @@
   justify-content: center;
   align-items: center;
   border: 1px solid black;
-  background: radial-gradient( #4076d5, #346db7)
+  background: radial-gradient( #4076d5, #346db7);
+  transition: transform 0.1s ease;
 }
 
+.containerCard:active {
+  transform: scale(0.95);
+}
 
 .flashcardContainer {
   display: flex;
