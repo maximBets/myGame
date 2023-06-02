@@ -5,17 +5,19 @@ import { RootState } from '../../store';
 
 function Navbar(): JSX.Element {
   const { user } = useSelector((store: RootState) => store.userReducer);
-  console.log(user, '1232313')
+
   return (
     <nav className="#1a237e indigo darken-4">
       <div className="nav-wrap">
-        {user ? (
+        {user?.name ? (
           <>
             <Link className="brand-logo" to="/">
               Игра
             </Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
-              <li>привет, user</li>
+              <li>
+                Привет, {user.name}! у тебя {user.totalScore}{' '}
+              </li>
             </ul>
           </>
         ) : (

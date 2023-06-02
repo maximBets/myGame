@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { RootState } from '../store';
 import * as api from './api';
 
 function Registr(): JSX.Element {
+  const { user } = useSelector((state: RootState) => state.userReducer);
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
   const dispatch = useDispatch();
+
+  if ('id' in user) {
+    navigate('/');
+  }
+
   const registration = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     api

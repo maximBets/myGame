@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-// import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './css/styles.module.css';
 import { Flash } from './reducer/types/type';
 import './Modal.css';
-import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
+
 // import { RootState } from '../../store';
 
 function Card({ flash }: { flash: Flash }): JSX.Element {
@@ -12,6 +12,7 @@ function Card({ flash }: { flash: Flash }): JSX.Element {
   const [activeCard, setActiveCard] = useState(true);
   const [activeCheck, setActiveCheck] = useState('');
   const [valueModal, setValueModal] = useState('');
+  const dispatch = useDispatch();
   const { user } = useSelector((store: RootState) => store.userReducer);
 
   // const s = useSelector((state:RootState) => state.flashCardReducer)
@@ -19,8 +20,22 @@ function Card({ flash }: { flash: Flash }): JSX.Element {
   const hendlerCheck: React.MouseEventHandler<HTMLButtonElement> = () => {
     if (flash.answer.toLowerCase() === valueModal.toLowerCase()) {
       setActiveCheck('верно');
+      if (user) {
+        const count =
+          typeof user.totalScore === 'number'
+            ? user.totalScore + flash.score
+            : 0;
+        dispatch({ type: 'user/score/update', payload: count });
+      }
     } else {
       setActiveCheck('не верно');
+      if (user) {
+        const count =
+          typeof user.totalScore === 'number'
+            ? user.totalScore - flash.score
+            : 0;
+        dispatch({ type: 'user/score/update', payload: count });
+      }
     }
   };
 
