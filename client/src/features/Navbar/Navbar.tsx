@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { RootState } from '../../store';
-
+import './Navbar.css';
 
 function Navbar(): JSX.Element {
   const { user } = useSelector((store: RootState) => store.userReducer);
@@ -15,16 +15,15 @@ function Navbar(): JSX.Element {
             <Link to="/">
               <div className="brand-logo">Игра</div>
             </Link>
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
-              <li>
-                Привет, {user.name}! у тебя {user.totalScore}
-              </li>
+            <ul id="nav-mobile" className="right hide-on-med-and-down ">
+              <li className="privet">Привет, {user.name}!</li>
+              <li className="privet">Твой Счёт: {user.totalScore}</li>
             </ul>
           </>
         ) : (
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
-              <Link to="/login">вход</Link>
+              <Link to="/login">Вход</Link>
             </li>
             <li>
               <Link to="/registration">Регистрация</Link>
