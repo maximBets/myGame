@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import styles from './css/styles.module.css';
 import { Flash } from './reducer/types/type';
 import './Modal.css';
-import { RootState } from '../../store';
+// import { RootState } from '../../store';
 
 function Card({ flash }: { flash: Flash }): JSX.Element {
   const [activeModal, setActiveModal] = useState(false);
