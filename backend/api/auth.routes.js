@@ -4,9 +4,10 @@ const { User } = require('../db/models');
 
 // * регистрация
 authRoutes.post('/register', async (req, res) => {
+  console.log('123')
   try {
     const { name, password, password2 } = req.body;
-
+      console.log(name, password, password2)
     // * проверка что все поля заполнены
     if (!(name && password2 && password)) {
       res

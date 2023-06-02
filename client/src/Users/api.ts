@@ -2,7 +2,7 @@ import { User } from './redux/type/type';
 
 // eslint-disable-next-line import/prefer-default-export
 export const registrFetch = async (obj:User):Promise<User> => {
-    const res = await fetch('/api/auth/reg', {
+    const res = await fetch('/auth/register', {
         method: 'POST',
         headers: {
             'Content-type': 'application/json',
