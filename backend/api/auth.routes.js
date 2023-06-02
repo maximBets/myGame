@@ -4,10 +4,9 @@ const { User } = require('../db/models');
 
 // * регистрация
 authRoutes.post('/register', async (req, res) => {
-  console.log('123')
   try {
     const { name, password, password2 } = req.body;
-      console.log(name, password, password2)
+
     // * проверка что все поля заполнены
     if (!(name && password2 && password)) {
       res
@@ -15,7 +14,7 @@ authRoutes.post('/register', async (req, res) => {
         .json({ success: false, message: 'Заполните пожайлуста все поля' });
       return;
     }
-    // // * проверка совпадения паролей
+    // * проверка совпадения паролей
     if (password !== password2) {
       res.status(403).json({ success: false, message: 'Пароли не совпадают' });
       return;
@@ -44,7 +43,12 @@ authRoutes.post('/register', async (req, res) => {
 
     res
       .status(200)
-      .json({ name: user.name, id: user.id, password: user.password });
+      .json({
+        name: user.name,
+        id: user.id,
+        password: user.password,
+        totalScore: user.totalScore,
+      });
   } catch (error) {
     console.error(error);
 
@@ -87,7 +91,12 @@ authRoutes.post('/login', async (req, res) => {
     req.session.userId = user.id;
     res
       .status(200)
-      .json({ name: user.name, id: user.id, password: user.password });
+      .json({
+        name: user.name,
+        id: user.id,
+        password: user.password,
+        totalScore: user.totalScore,
+      });
   } catch (error) {
     console.error(error);
 

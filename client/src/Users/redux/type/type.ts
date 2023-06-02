@@ -1,11 +1,15 @@
-export type User = {
-    id?:number;
-    name:string;
-    password:string;
-    password2:string
+import { type } from 'os';
 
+export type User = {
+  id?: number;
+  name?: string;
+  password?: string;
+  password2?: string;
+  totalScore?: number;
 };
 
 export type State = {
-    user:User | {};
+  user: User;
 };
+
+export type UserScore = User['totalScore'];
