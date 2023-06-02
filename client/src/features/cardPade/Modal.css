@@ -31,9 +31,7 @@
 .modals-content.active {
  transform:  scale(1);
 }
-.vopros{
-  color: rgb(0, 0, 0);
-  justify-content: center;
+
   }
   .cont{
   width: 5%;
@@ -47,3 +45,4 @@
   body{
   background: linear-gradient(90deg, #0a062f 0%, #3a09fb 100%);
   }
+

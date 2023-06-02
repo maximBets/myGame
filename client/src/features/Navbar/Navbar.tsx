@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { RootState } from '../../store';
 
+
 function Navbar(): JSX.Element {
   const { user } = useSelector((store: RootState) => store.userReducer);
 
@@ -11,12 +12,12 @@ function Navbar(): JSX.Element {
       <div className="nav-wrap">
         {user?.name ? (
           <>
-            <Link className="brand-logo" to="/">
-              Игра
+            <Link to="/">
+              <div className="brand-logo">Игра</div>
             </Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
-                Привет, {user.name}! у тебя {user.totalScore}{' '}
+                Привет, {user.name}! у тебя {user.totalScore}
               </li>
             </ul>
           </>
