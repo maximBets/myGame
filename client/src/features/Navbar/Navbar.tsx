@@ -12,7 +12,7 @@ function Navbar(): JSX.Element {
               Игра
             </Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
-              <li>привет,</li>
+               <li>привет, {/*{user.name}*/}</li> 
             </ul>
           </>
         ) : (

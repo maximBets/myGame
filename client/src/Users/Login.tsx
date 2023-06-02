@@ -1,6 +1,6 @@
 import React from 'react';
 
-function gamePage():JSX.Element {
+function Login():JSX.Element {
   return (
     <div>
       1232ewewezxcxcxcxcxcxcx
@@ -8,4 +8,4 @@ function gamePage():JSX.Element {
   );
 }
 
-export default gamePage;
+export default Login;
