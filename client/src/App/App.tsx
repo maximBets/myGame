@@ -1,13 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Navbar from '../features/Navbar/Navbar';
 import Registr from '../Users/Registr';
-import Login from '../Users/Login'
-import React, { useEffect } from 'react';
+import Login from '../Users/Login';
 import './App.css';
-import { useDispatch } from 'react-redux';
-import Card from '../features/cardPade/Card';
-import * as api from './api';
 import CardList from '../features/cardPade/CardList';
+import * as api from './api';
 
 function App(): JSX.Element {
   const despatch = useDispatch();
@@ -22,11 +21,10 @@ function App(): JSX.Element {
     <div>
       <Navbar />
       <Routes>
-      <Route path="/" element={<Game />} />
-      <Route path="/login" element={<Login />} /> 
-      <Route path="/registration" element={<Registr />} />
+        <Route path="/" element={<CardList />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registration" element={<Registr />} />
       </Routes>
-      <CardList />
     </div>
   );
 }
