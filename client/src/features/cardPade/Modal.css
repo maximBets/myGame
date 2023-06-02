@@ -31,3 +31,6 @@
 .modals-content.active {
  transform:  scale(1);
 }
+.hide-on-med-and-down{
+  margin-right: 30px;
+}
