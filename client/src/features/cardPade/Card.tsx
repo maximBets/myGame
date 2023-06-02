@@ -30,15 +30,15 @@ function Card({ flash }: { flash: Flash }): JSX.Element {
         className={
           activeCard ? styles.containerCard : styles.containerCardDisable
         }
-        onClick={() => setActiveModal(!activeModal)}>
+        onClick={() => setActiveModal(!activeModal)}
+      >
         <div className={styles.scoreCard}>{flash.score} </div>
       </div>
       <div>
         <div className={activeModal ? 'modals active' : 'modals'}>
           <div
-            className={
-              activeModal ? 'modals-content active' : 'modals-content'
-            }>
+            className={activeModal ? 'modals-content active' : 'modals-content'}
+          >
             <div className="">{flash.question}</div>
             <input onChange={(e) => setValueModal(e.target.value)} />
             <div className="">{activeCheck}</div>
@@ -48,7 +48,8 @@ function Card({ flash }: { flash: Flash }): JSX.Element {
               onClick={() => {
                 setActiveModal(!activeModal);
                 setActiveCard((prev) => !prev);
-              }}>
+              }}
+            >
               Закрыть
             </button>
             <button type="button" onClick={hendlerCheck}>
