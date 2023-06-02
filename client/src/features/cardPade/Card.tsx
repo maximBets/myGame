@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import styles from './css/styles.module.css';
 import { Flash } from './reducer/types/type';
 import './Modal.css';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store';
 // import { RootState } from '../../store';
 
 function Card({ flash }: { flash: Flash }): JSX.Element {
@@ -10,6 +12,7 @@ function Card({ flash }: { flash: Flash }): JSX.Element {
   const [activeCard, setActiveCard] = useState(true);
   const [activeCheck, setActiveCheck] = useState('');
   const [valueModal, setValueModal] = useState('');
+  const { user } = useSelector((store: RootState) => store.userReducer);
 
   // const s = useSelector((state:RootState) => state.flashCardReducer)
 
@@ -27,15 +30,15 @@ function Card({ flash }: { flash: Flash }): JSX.Element {
         className={
           activeCard ? styles.containerCard : styles.containerCardDisable
         }
-        onClick={() => setActiveModal(!activeModal)}
-      >
+        onClick={() => setActiveModal(!activeModal)}>
         <div className={styles.scoreCard}>{flash.score} </div>
       </div>
       <div>
         <div className={activeModal ? 'modals active' : 'modals'}>
           <div
-            className={activeModal ? 'modals-content active' : 'modals-content'}
-          >
+            className={
+              activeModal ? 'modals-content active' : 'modals-content'
+            }>
             <div className="">{flash.question}</div>
             <input onChange={(e) => setValueModal(e.target.value)} />
             <div className="">{activeCheck}</div>
@@ -45,8 +48,7 @@ function Card({ flash }: { flash: Flash }): JSX.Element {
               onClick={() => {
                 setActiveModal(!activeModal);
                 setActiveCard((prev) => !prev);
-              }}
-            >
+              }}>
               Закрыть
             </button>
             <button type="button" onClick={hendlerCheck}>
