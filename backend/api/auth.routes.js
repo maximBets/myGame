@@ -4,9 +4,10 @@ const { User } = require('../db/models');
 
 // * регистрация
 authRoutes.post('/register', async (req, res) => {
+  console.log('123')
   try {
     const { name, password, password2 } = req.body;
-
+      console.log(name, password, password2)
     // * проверка что все поля заполнены
     if (!(name && password2 && password)) {
       res
@@ -41,7 +42,9 @@ authRoutes.post('/register', async (req, res) => {
 
     req.session.userId = user.id;
 
-    res.status(200).json({ success: true });
+    res
+      .status(200)
+      .json({ name: user.name, id: user.id, password: user.password });
   } catch (error) {
     console.error(error);
 
@@ -82,7 +85,9 @@ authRoutes.post('/login', async (req, res) => {
     // * req.session - хранилище сессии, которое уникально для каждого браузера
 
     req.session.userId = user.id;
-    res.status(200).json({ success: true });
+    res
+      .status(200)
+      .json({ name: user.name, id: user.id, password: user.password });
   } catch (error) {
     console.error(error);
 
