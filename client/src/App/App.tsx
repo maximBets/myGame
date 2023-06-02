@@ -1,3 +1,7 @@
+import { Route, Routes } from 'react-router-dom';
+import Navbar from '../features/Navbar/Navbar';
+import Registr from '../Users/Registr';
+import Login from '../Users/Login'
 import React, { useEffect } from 'react';
 import './App.css';
 import { useDispatch } from 'react-redux';
@@ -16,6 +20,12 @@ function App(): JSX.Element {
 
   return (
     <div>
+      <Navbar />
+      <Routes>
+      <Route path="/" element={<Game />} />
+      <Route path="/login" element={<Login />} /> 
+      <Route path="/registration" element={<Registr />} />
+      </Routes>
       <CardList />
     </div>
   );
