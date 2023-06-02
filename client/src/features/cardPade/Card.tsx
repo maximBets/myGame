@@ -58,7 +58,6 @@ function Card({ flash }: { flash: Flash }): JSX.Element {
             <div className="">{flash.question}</div>
             <input onChange={(e) => setValueModal(e.target.value)} required />
             <div className="">{activeCheck}</div>
-
             <div onClick={() => setDatails((prev) => !prev)}>
               {details ? (
                 <button
