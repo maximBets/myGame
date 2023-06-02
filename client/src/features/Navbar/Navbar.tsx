@@ -16,14 +16,14 @@ function Navbar(): JSX.Element {
             </Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
-                Привет, {user.name}! у тебя {user.totalScore}{' '}
+                Привет, {user.name}! Твой счёт: {user.totalScore}{' '}
               </li>
             </ul>
           </>
         ) : (
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
-              <Link to="/login">вход</Link>
+              <Link to="/login">Вход</Link>
             </li>
             <li>
               <Link to="/registration">Регистрация</Link>

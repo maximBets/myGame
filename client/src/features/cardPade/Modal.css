@@ -19,13 +19,15 @@
 }
 
 .modals-content {
-  width: 400px;
+  width: 500px;
   height: 400px;
   background-color: white;
   border-radius: 15px;
   padding: 20px;
   transform: scale(0.5);
   transition: 0,4s all;
+  font-size: 20px;
+
 }
 
 .modals-content.active {
@@ -45,5 +47,5 @@
   
   
   body{
-  background: linear-gradient(90deg, #0a062f 0%, #3a09fb 100%);
+  background-color: rgb(192, 226, 248);
   }

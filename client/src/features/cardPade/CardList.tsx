@@ -9,7 +9,12 @@ function CardList(): JSX.Element {
     (store: RootState) => store.flashCardReducer
   );
 
+  const { user } = useSelector(
+    (store: RootState) => store.userReducer
+  );
+
   return (
+
     <div className={styles.gameContainer}>
     <div className={styles.flashcardContainer}>
       {flashCards.map((theme) => (
@@ -24,6 +29,7 @@ function CardList(): JSX.Element {
       ))}
     </div>
     </div>
+
   );
 }
 
